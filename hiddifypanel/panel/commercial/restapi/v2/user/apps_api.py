@@ -147,7 +147,7 @@ class AppAPI(MethodView):
                 # hiddify_clash_dto = self.__get_hiddify_clash_desktop_app_dto()
                 apps_data += ([hiddify_next_dto, singbox_dto, clash_verge_rev_dto ])
 
-        return apps_data
+        return [self.__serialize_app_dto(app_dto) for app_dto in apps_data]
 
     def __get_ua_platform(self):
         os = user_agents.parse(request.user_agent.string).os.family
@@ -241,6 +241,11 @@ class AppAPI(MethodView):
         install_dto.type = install_type
         install_dto.url = url
         return install_dto
+
+    def __serialize_app_dto(self, dto: AppSchema):
+        """Materialize an AppSchema instance into a response-friendly dict."""
+        schema = AppSchema()
+        return schema.dump(dto)
 
     def __get_v2rayn_app_dto(self):
         dto = AppSchema()
@@ -352,6 +357,7 @@ class AppAPI(MethodView):
         dto.deeplink = f'loon://import?nodelist={self.user_panel_encoded_url}'
         ins_url = 'https://apps.apple.com/app/id1373567447'
         dto.install = [self.__get_app_install_dto(AppInstallType.app_store, ins_url)]
+        return dto
 
     def __get_stash_app_dto(self):
         dto = AppSchema()
