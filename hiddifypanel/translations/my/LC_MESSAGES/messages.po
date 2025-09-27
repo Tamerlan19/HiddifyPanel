@@ -1026,11 +1026,23 @@ msgstr "Streisand ဖော်ပြချက်"
 msgid "app.streisand.title"
 msgstr "Streisand"
 
+msgid "app.happ.description"
+msgstr "HAPP သည် happ:// လင့်ခ်များဖြင့် tunnel ကို ထိန်းချုပ်ပြီး server အသစ်များထည့်သွင်းနိုင်စေပါသည်။"
+
+msgid "app.happ.title"
+msgstr "HAPP"
+
 msgid "app.v2rayng.description"
 msgstr "V2RayNG ဖော်ပြချက်"
 
 msgid "app.v2rayng.title"
 msgstr "V2RayNG"
+
+msgid "app.v2raytun.description"
+msgstr "V2rayTun သည် deeplink ဖြင့် subscription များကို ထည့်သွင်းနိုင်သော iOS client ဖြစ်ပါသည်။"
+
+msgid "app.v2raytun.title"
+msgstr "V2rayTun"
 
 msgid "auto"
 msgstr "အလိုအလျောက်"

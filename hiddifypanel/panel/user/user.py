@@ -130,6 +130,16 @@ class UserView(FlaskView):
 
         c = get_common_data(g.account.uuid, mode="new")
         user_agent = user_agents.parse(request.user_agent.string)
+
+        deeplink_scheme = 'hiddify'
+        apple_app_id = '6596777532'
+        if user_agent.os.family == 'iOS':
+            deeplink_scheme = 'v2raytun'
+            apple_app_id = '6446698667'
+
+        c['deeplink_url'] = f"{deeplink_scheme}://import/{c['profile_url']}"
+        c['apple_app_id'] = apple_app_id
+
         # return render_template('home/multi.html', **c, ua=user_agent)
         return render_template('new.html', **c, ua=user_agent)
 
