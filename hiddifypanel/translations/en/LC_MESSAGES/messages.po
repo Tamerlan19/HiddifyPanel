@@ -1124,6 +1124,12 @@ msgstr "Streisand Description"
 msgid "app.streisand.title"
 msgstr "Streisand"
 
+msgid "app.happ.description"
+msgstr "HAPP provides happ:// actions for managing the tunnel and importing new servers."
+
+msgid "app.happ.title"
+msgstr "HAPP"
+
 msgid "app.v2rayn.title"
 msgstr "app.v2rayn.title"
 
@@ -1132,6 +1138,12 @@ msgstr "V2RayNG Description"
 
 msgid "app.v2rayng.title"
 msgstr "V2RayNG"
+
+msgid "app.v2raytun.description"
+msgstr "V2rayTun is an iOS client that can import subscription links and profiles via deeplink."
+
+msgid "app.v2raytun.title"
+msgstr "V2rayTun"
 
 msgid "auto"
 msgstr "Auto"

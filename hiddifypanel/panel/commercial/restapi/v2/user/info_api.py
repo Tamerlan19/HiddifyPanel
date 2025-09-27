@@ -64,11 +64,13 @@ class InfoAPI(MethodView):
         dto.lang = (c['user'].lang) or Lang(hconfig(ConfigEnum.lang))
         dto.brand_icon_url = "" if hconfig(ConfigEnum.branding_title) else hutils.flask.static_url_for(filename="images/favicon.ico")
         # with force_locale("fa"):
-        dto.admin_message_html = hconfig(ConfigEnum.branding_freetext) or _("Join our Hiddify Telegram channel to get the latest updates on Hiddify.")
+        dto.admin_message_html = hconfig(ConfigEnum.branding_freetext) or _(
+            "Присоединяйтесь к нашему каналу в Telegram, чтобы получать новости и обновления.<br/>Если возникнут вопросы или проблемы — пишите в наш чат поддержки."
+        )
         if not hconfig(ConfigEnum.branding_freetext) and auth.admin_session_is_exist():
             dto.admin_message_html += "<p style='font-style: italic;font-size:8px'>" + \
                 _("[Admin only visible message:] You can change this message from settings") + "</p>"
-        dto.admin_message_url = hconfig(ConfigEnum.branding_site) or "https://t.me/hiddify"
+        dto.admin_message_url = hconfig(ConfigEnum.branding_site) or "https://t.me/hundred_vpn"
         dto.brand_title = hconfig(ConfigEnum.branding_title) or _("Hiddify")
 
         dto.speedtest_enable = hconfig(ConfigEnum.speed_test)

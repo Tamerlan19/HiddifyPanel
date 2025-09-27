@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     
-    <meta name="apple-itunes-app" content="app-id=6596777532, app-argument=hiddify://import/{{profile_url}}">
+    <meta name="apple-itunes-app" content="app-id={{apple_app_id}}, app-argument={{deeplink_url|e}}">
     <meta name="google-play-app" content="app-id=app.hiddify.com">
 
     <link rel="icon" type="image/png" href="../static/new/assets/hiddify-logo-7617d937.png" />
@@ -23,7 +23,7 @@
     <!--<script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></script>-->
     <script>
       window.appVersion = '{{version}}';
-      window.deepLink = "hiddify://import/{{profile_url}}"
+      window.deepLink = {{ deeplink_url|tojson }}
     </script>
   </body>
 </html>
