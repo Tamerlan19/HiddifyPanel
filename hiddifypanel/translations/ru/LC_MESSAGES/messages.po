@@ -1126,6 +1126,12 @@ msgstr "Описание Streisand"
 msgid "app.streisand.title"
 msgstr "Streisand"
 
+msgid "app.happ.description"
+msgstr "HAPP использует схемы happ:// для управления туннелем и добавления серверов."
+
+msgid "app.happ.title"
+msgstr "HAPP"
+
 msgid "app.v2rayn.title"
 msgstr ""
 
@@ -1134,6 +1140,12 @@ msgstr "Описание V2RayNG"
 
 msgid "app.v2rayng.title"
 msgstr "V2RayNG"
+
+msgid "app.v2raytun.description"
+msgstr "V2rayTun — iOS‑клиент, который может импортировать подписки через диплинки."
+
+msgid "app.v2raytun.title"
+msgstr "V2rayTun"
 
 msgid "auto"
 msgstr "Авто"

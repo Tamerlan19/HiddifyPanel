@@ -1091,6 +1091,12 @@ msgstr "Streisand描述"
 msgid "app.streisand.title"
 msgstr "Streisand"
 
+msgid "app.happ.description"
+msgstr "HAPP 使用 happ:// 链接来管理隧道并快速添加服务器。"
+
+msgid "app.happ.title"
+msgstr "HAPP"
+
 msgid "app.v2rayn.title"
 msgstr ""
 
@@ -1099,6 +1105,12 @@ msgstr "V2RayNG 说明"
 
 msgid "app.v2rayng.title"
 msgstr "V2RayNG"
+
+msgid "app.v2raytun.description"
+msgstr "V2rayTun 是一款支持通过深度链接导入订阅的 iOS 客户端。"
+
+msgid "app.v2raytun.title"
+msgstr "V2rayTun"
 
 msgid "auto"
 msgstr "自动"
