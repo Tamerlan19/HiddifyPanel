@@ -1113,6 +1113,12 @@ msgstr "توضیحات Streisand"
 msgid "app.streisand.title"
 msgstr "Streisand"
 
+msgid "app.happ.description"
+msgstr "برنامه HAPP با پیوندهای happ:// مدیریت تونل و افزودن سرور را ساده می‌کند."
+
+msgid "app.happ.title"
+msgstr "HAPP"
+
 msgid "app.v2rayn.title"
 msgstr ""
 
@@ -1121,6 +1127,12 @@ msgstr "توضیحات V2RayNG"
 
 msgid "app.v2rayng.title"
 msgstr "V2RayNG"
+
+msgid "app.v2raytun.description"
+msgstr "V2rayTun یک کلاینت iOS برای وارد کردن لینک های اشتراک است."
+
+msgid "app.v2raytun.title"
+msgstr "V2rayTun"
 
 msgid "auto"
 msgstr "خودکار"

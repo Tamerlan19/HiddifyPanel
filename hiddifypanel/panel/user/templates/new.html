@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     
-    <meta name="apple-itunes-app" content="app-id=6596777532, app-argument=hiddify://import/{{profile_url}}">
+    <meta name="apple-itunes-app" content="app-id={{apple_app_id}}, app-argument={{deeplink_url|e}}">
     <meta name="google-play-app" content="app-id=app.hiddify.com">
 
     <link rel="icon" type="image/png" href="../static/new/assets/hiddify-logo-7617d937.png" />
@@ -23,7 +23,66 @@
     <!--<script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></script>-->
     <script>
       window.appVersion = '{{version}}';
-      window.deepLink = "hiddify://import/{{profile_url}}"
+      window.deepLink = {{ deeplink_url|tojson }};
+      (function () {
+        const textMatchers = [
+          /\bAll\s*Configs?\b/i,
+          /\bAll\s*Configurations?\b/i,
+          /\bSpeed\s*Test\b/i,
+          /\bSpeed\s*Tests?\b/i,
+          /تمام\s*کانفیگ\s*ها/,
+          /تمامی\s*کانفیگ\s*ها/,
+          /تست\s*سرعت/,
+          /Все\s*конфиги/i,
+          /Все\s*конфигурации/i,
+          /Тест\s*скорости/i
+        ];
+        const removeMatches = (root) => {
+          if (!root || !root.querySelectorAll) {
+            return;
+          }
+          root.querySelectorAll('a, button, li, div, section').forEach((node) => {
+            const text = (node.textContent || '').trim();
+            if (!text) {
+              return;
+            }
+            if (textMatchers.some((pattern) => pattern.test(text))) {
+              const removable = node.closest('li, a, button, div, section') || node;
+              if (removable && removable.parentNode) {
+                removable.parentNode.removeChild(removable);
+              }
+            }
+          });
+        };
+        const removeFooter = () => {
+          document.querySelectorAll('footer, [class*="Footer"], [data-testid="footer"]').forEach((el) => {
+            el.remove();
+          });
+        };
+        const prune = (target) => {
+          removeFooter();
+          removeMatches(target || document.body);
+        };
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+              if (node instanceof HTMLElement) {
+                prune(node);
+              }
+            });
+          });
+        });
+        const start = () => {
+          prune();
+          observer.observe(document.body, { childList: true, subtree: true });
+          window.setTimeout(() => observer.disconnect(), 5000);
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start);
+        } else {
+          start();
+        }
+      })();
     </script>
   </body>
 </html>
