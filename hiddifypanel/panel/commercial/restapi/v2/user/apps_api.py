@@ -352,6 +352,7 @@ class AppAPI(MethodView):
         dto.deeplink = f'loon://import?nodelist={self.user_panel_encoded_url}'
         ins_url = 'https://apps.apple.com/app/id1373567447'
         dto.install = [self.__get_app_install_dto(AppInstallType.app_store, ins_url)]
+        return dto
 
     def __get_stash_app_dto(self):
         dto = AppSchema()
